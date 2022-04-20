@@ -26,59 +26,59 @@ const newData = JSON.parse(fs.readFileSync(changesFileName, "utf8"));
 
 const outputData = () => {
   //  log(spotifyData); log(newData);
-  let currentSongs = spotifyData.songs;
-  let currentUserPlaylists = spotifyData.playlists;
-  let currentUsers = spotifyData.users;
-
-  let updatedPlaylist = "";
+  let newSongs = spotifyData.songs;
+  let newUsers = spotifyData.users;
+  let newPlaylists = spotifyData.playlists;
 
   // * Update Songs
   if (newData?.add_songs) {
     newData.add_songs.forEach((song) => {
-      let id = JSON.stringify(1 + currentSongs.length);
+      let id = JSON.stringify(1 + newSongs.length);
       let songWithId = {
         id: id,
         ...song,
       };
-      currentSongs.push(songWithId);
+      newSongs.push(songWithId);
     });
   }
 
   // * Update User Playlist
   if (newData?.add_playlists) {
-    newData.add_playlists.forEach((newDataPlaylist) => {
-      let ownerId = newDataPlaylist.owner_id;
-      // log(ownerId);
-
+    newData.add_playlists.forEach((playlist) => {
+      // log(playlist);
+      // log(owner_id, song_ids);
       // ** update by matching playlist owner_id
-      currentUserPlaylists = currentUserPlaylists.map((user_playlist) =>
-        user_playlist.owner_id == ownerId
-          ? user_playlist.song_ids.concat(newDataPlaylist.song_ids)
-          : user_playlist
-      );
-      //   ? { ...user_playlist, newDataPlaylist }
+      // ! _was trying to add songs to existing playlist before ( a bit harder =])
+      // ! Need to add new playlist
 
-      //   log(currentUserPlaylists);
+      let id = JSON.stringify(1 + newPlaylists.length);
+      let playlistWithId = {
+        id: id,
+        owner_id: playlist.owner_id,
+        song_ids: playlist.song_ids,
+      };
+      newPlaylists.push(playlistWithId);
     });
   }
 
+  // !currently deletes all because its inside for Each..
   // * Update (remove) an existing playlist
-  if (newData?.remove_playlists) {
-    let removeList = newData.remove_playlists;
-    // log(removeList)
+  // if (newData?.remove_playlists) {
+  //   let removeList = newData.remove_playlists;
 
-    updatedPlaylist = removeList.forEach((removalItem) => {
-      currentUserPlaylists.filter((playlist) => playlist.id !== removalItem.id);
-    });
+  //   newPlaylists = removeList.forEach(({ id }) => {
+  //     log(id);
 
-    // log(c);
-  }
+  //     newPlaylists.map((item) => item !== id);
+
+  //   });
+  // }
 
   // * convert to JSON string to write to file
   let newString = JSON.stringify({
-    users: currentUsers,
-    playlists: currentUserPlaylists,
-    songs: currentSongs,
+    users: newUsers,
+    playlists: newPlaylists,
+    songs: newSongs,
   });
 
   // * write updated data to output-file.json
