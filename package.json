@@ -1,0 +1,14 @@
+{
+  "name": "buildbook-exercise",
+  "version": "1.0.0",
+  "description": "Code test for buildbook",
+  "main": "buildbook-exercise.js",
+  "license": "MIT",
+  "author": "Thomas White",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "start": "node buildbook-exercise",
+    "start:files": "node buildbook-exercise spotify.json changes.json output-file.json"
+  }
+}

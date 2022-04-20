@@ -1,0 +1,30 @@
+{
+  "add_songs": [
+    {
+      "artist": "Eminem",
+      "title": "The Real Slim Shady"
+    },
+    {
+      "artist": "Eminem",
+      "title": "The Real Slim Shady"
+    },
+    {
+      "artist": "Eminem",
+      "title": "The Real Slim Shady"
+    }
+  ],
+  "add_playlists": [
+    {
+      "owner_id": "2",
+      "song_ids": ["10000", "1000", "1000000000"]
+    }
+  ],
+  "remove_playlists": [
+    {
+      "id": "4"
+    },
+    {
+      "id": "5"
+    }
+  ]
+}
