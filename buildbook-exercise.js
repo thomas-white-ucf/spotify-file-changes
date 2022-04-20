@@ -2,7 +2,7 @@ import fs from "fs";
 
 //* log = console Log function
 const log = (arg) => {
-  console.log(`\n log (argument) ==>> `, arg);
+  console.log(`\n`, arg);
 };
 
 const fileArgs = process.argv.slice(2);
@@ -83,6 +83,7 @@ const outputData = () => {
 
   // * write updated data to output-file.json
   fs.writeFileSync(outputFileName, newString);
+  log("Successful update, please see your output-file\n");
 };
 
 outputData();

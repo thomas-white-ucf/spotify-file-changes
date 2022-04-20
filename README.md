@@ -1,28 +1,52 @@
 # Project Use Case Details
 
+Clone repository using (git clone)
+
+To begin with node, in project root folder, run:  node buildbook-exercise
+
 To begin with yarn.
 
-- yarn start
+- yarn start:files
 
-## Next steps
+- yarn start "spotify.json" "changes-file..." "output-file.json"
 
-add ids to songs entered dynamically.
+yarn start:files - this specifies the adjacent files in this directory.
+yarn start - runs - node buildbook-exercise
 
-## Instructions
+To see results, located the "output-file.json", or your specified file location.
 
-Your solution includes a README that explains how to use your application and a way to validate its output
+## Design Methodology
 
-Your README describes what changes you would need to make in order to scale this application to handle very large input files and/or very large changes files.
-Just describe these changes — please do not implement a scaled-up version of the application.
+Based on requirements this project was designed to have specified file inputs, or read adjacent files for ease of use.
+This project reads an entered spotify and changes files, then parses the data for use in creating an output file.
+Data is read from local files, then the main function - outPutData() - is defined and called.
 
-Your README includes any thoughts on design decisions you made that you think are appropriate.
+Data Structure of your changes-file - key names chosen based on required functionality
 
-Your README includes how long you spent on the project, and any other thoughts you might have or want to communicate.
+- add_songs
+- add_playlists
+- remove_playlists
 
-<!-- ACCEPT THESE CHANGES -->
+Function outPutData() -
 
-The types of changes your application needs to support are:
+- adds songs
+- adds playlist to existing users
+- removes playlists
+- writes updated JSON data to an output file
 
-Add an existing song to an existing playlist.
-Add a new playlist for an existing user; the playlist should contain at least one existing song.
-Remove an existing playlist.
+## Next steps to Scale
+
+Error handling
+Currently each New Data Update is checked to exist before starting the if-statement
+
+Add types for data types.
+
+For very large files, async - await s for each step.
+
+## Time Invested no this Interview Exercise / Thoughts
+
+2.5 focused hours Invested.
+
+Another half hour of Time Invested, and the functionality of adding playlist / removing will be solved. Issue encountered - I did not initially build out robust enough. After adding UserPlaylists, I then tried to edit the UserPlaylist again to remove playlists. Need to redesign my update playlists methods to fix this.
+
+This Exercise was a Great introduction to BuildBook. Project scope was realistic, with stated parameters for success.
