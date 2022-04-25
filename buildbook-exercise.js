@@ -45,11 +45,9 @@ const outputData = () => {
   // * Update User Playlist
   if (newData?.add_playlists) {
     newData.add_playlists.forEach((playlist) => {
-      // log(playlist);
-      // log(owner_id, song_ids);
+      // log(playlist); log(owner_id, song_ids);
       // ** update by matching playlist owner_id
-      // ! _was trying to add songs to existing playlist before ( a bit harder =])
-      // ! Need to add new playlist
+      // ! __was trying to add songs to existing playlist before
 
       let id = JSON.stringify(1 + newPlaylists.length);
       let playlistWithId = {
@@ -61,18 +59,15 @@ const outputData = () => {
     });
   }
 
-  // !currently deletes all because its inside for Each..
-  // * Update (remove) an existing playlist
-  // if (newData?.remove_playlists) {
-  //   let removeList = newData.remove_playlists;
+  // * Remove Playlists
+  if (newData?.remove_playlists) {
+    let removeList = newData.remove_playlists;
 
-  //   newPlaylists = removeList.forEach(({ id }) => {
-  //     log(id);
-
-  //     newPlaylists.map((item) => item !== id);
-
-  //   });
-  // }
+    // set the newPlaylists = to the filtered newPlaylist array, filtered by removing matching ids
+    removeList.forEach(
+      ({ id }) => (newPlaylists = newPlaylists.filter((item) => item.id != id))
+    );
+  }
 
   // * convert to JSON string to write to file
   let newString = JSON.stringify({

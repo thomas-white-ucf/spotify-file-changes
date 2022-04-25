@@ -1,9 +1,6 @@
 {
   "users": [
-    {
-      "id": "1",
-      "name": "Albin Jaye"
-    },
+    { "id": "1", "name": "Albin Jaye" },
     {
       "id": "2",
       "name": "Dipika Crescentia"
@@ -30,31 +27,11 @@
     }
   ],
   "playlists": [
-    {
-      "id": "1",
-      "owner_id": "2",
-      "song_ids": ["8", "32"]
-    },
-    {
-      "id": "2",
-      "owner_id": "3",
-      "song_ids": ["6", "8", "11"]
-    },
-    {
-      "id": "3",
-      "owner_id": "4",
-      "song_ids": ["7", "12", "13", "16", "2"]
-    },
-    {
-      "id": "4",
-      "owner_id": "5",
-      "song_ids": ["7", "12", "13", "16", "2"]
-    },
-    {
-      "id": "5",
-      "owner_id": "6",
-      "song_ids": ["7", "12", "13", "16", "2"]
-    }
+    { "id": "1", "owner_id": "2", "song_ids": ["8", "32"] },
+    { "id": "2", "owner_id": "3", "song_ids": ["6", "8", "11"] },
+    { "id": "3", "owner_id": "4", "song_ids": ["7", "12", "13", "16", "2"] },
+    { "id": "4", "owner_id": "5", "song_ids": ["7", "12", "13", "16", "2"] },
+    { "id": "5", "owner_id": "6", "song_ids": ["7", "12", "13", "16", "2"] }
   ],
   "songs": [
     {

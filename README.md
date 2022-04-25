@@ -48,7 +48,9 @@ For very large files, async - await s for each step.
 
 ## Time Invested no this Interview Exercise / Thoughts
 
-(update-) Another half hour of Time Invested, and the functionality of adding playlist / removing will be solved. Issue encountered - I did not initially build out robust enough. After adding UserPlaylists, I then tried to edit the UserPlaylist again to remove playlists. Need to redesign my update playlists methods to fix this.
+(update- fixed remove and add spotify playlist methods + 30 min)
+
+(prior to update-) Another half hour of Time Invested, and the functionality of adding playlist / removing will be solved. Issue encountered - I did not initially build out robust enough. After adding UserPlaylists, I then tried to edit the UserPlaylist again to remove playlists. Need to redesign my update playlists methods to fix this.
 
 This Exercise was a Great introduction to BuildBook. Project scope was realistic, with stated parameters for success.
 
