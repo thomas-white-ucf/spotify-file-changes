@@ -2,11 +2,21 @@
 
 Clone repository using (git clone)
 
-To begin with node, in project root folder, run: node buildbook-exercise
+To begin with node, in project root folder,
+
+- yarn or npm install, then: node buildbook-exercise
 
 To begin with yarn.
 
+- yarn install
+
+- yarn start
+
 - yarn start:files
+
+- yarn test
+
+0r run with -
 
 - yarn start "spotify.json" "changes-file..." "output-file.json"
 
@@ -14,6 +24,10 @@ yarn start:files - this specifies the adjacent files in this directory.
 yarn start - runs - node buildbook-exercise
 
 To see results, located the "output-file.json", or your specified file location.
+
+(update- Jest Test) - after the output-file has been written. This file's data is tested by running:
+
+- yarn test
 
 ## Design Methodology
 
@@ -40,13 +54,15 @@ Error handling
 
 - Currently each New Data Update is checked to exist before starting the if-statement
 
-testing, / another function that reads the output-file after being written
+testing, / another function that reads the output-file after being written (added)
 
 Add types for data types.
 
 For very large files, async - await s for each step.
 
 ## Time Invested no this Interview Exercise / Thoughts
+
+(update- added a Jest test - run with yarn test, this test data "output-file.json" file has users, playlists, and songs)
 
 (update- fixed remove and add spotify playlist methods + 30 min)
 
@@ -59,6 +75,7 @@ This Exercise was a Great introduction to BuildBook. Project scope was realistic
 - update README.md  & array function errors described above
 
 - updated + 30 minutes
+- updated + 30 minutes for Jest test
 
 - Other Previous Related Works:
 - please see UCF Bootcamp project I completed

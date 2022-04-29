@@ -1,6 +1,9 @@
 {
   "users": [
-    { "id": "1", "name": "Albin Jaye" },
+    {
+      "id": "1",
+      "name": "Albin Jaye"
+    },
     {
       "id": "2",
       "name": "Dipika Crescentia"

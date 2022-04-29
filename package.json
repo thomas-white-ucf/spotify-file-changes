@@ -9,6 +9,16 @@
   "type": "module",
   "scripts": {
     "start": "node buildbook-exercise",
-    "start:files": "node buildbook-exercise spotify.json changes.json output-file.json"
+    "start:files": "node buildbook-exercise spotify.json changes.json out-custom.json",
+    "test": "jest",
+    "test:files": "jest buildbook-exercise spotify.json changes.json out-custom.json"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-jest": "^28.0.1",
+    "jest": "^28.0.1",
+    "react-test-renderer": "^18.0.0"
   }
 }
